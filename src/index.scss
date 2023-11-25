@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// For Nav bar Rules
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 100%;
+  height: 3rem;
+  background-color: darkcyan;
+  align-items: center;
+  padding: 0 5rem 0 5rem;
+}
+.brand-container {
+}
+.cart-container {
+  display: flex;
+  gap: 4rem;
+}
+.point {
+  cursor: pointer;
+}
+
+//For footer rules
+
+footer {
+  min-width: 100%;
+  height: 3rem;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-size {
+  width: 5rem;
+}
+.card {
+  width: 10rem;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+}
+// .card-parent {
+//   display: flex;
+//   flex-direction: row;
+// }
+.row {
+  min-width: 100%;
+  display: flex;
+  flex-basis: 5rem;
+  flex-grow: 2;
+}
