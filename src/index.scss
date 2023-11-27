@@ -37,13 +37,7 @@ footer {
 .img-size {
   width: 5rem;
 }
-.card {
-  width: 10rem;
-  background-color: yellow;
-  display: flex;
-  flex-direction: column;
-  margin: 2rem;
-}
+
 // .card-parent {
 //   display: flex;
 //   flex-direction: row;
@@ -54,3 +48,96 @@ footer {
   flex-basis: 5rem;
   flex-grow: 2;
 }
+.cart-container .fl-position {
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.header-heading {
+  text-decoration: none;
+  color: black;
+}
+h1 {
+  padding: 1rem;
+  text-align: center;
+}
+// .card-parent {
+//   display: flex;
+//   flex-wrap: wrap;
+//   flex-basis: 2;
+//   flex-grow: 1;
+// }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-grow: 2;
+  gap: 2rem;
+}
+.card {
+  width: 15rem;
+  height: 15rem;
+  // background-color: yellow;
+  margin-top: 10px;
+  padding: 2rem;
+  margin: 2rem;
+  white-space: nowrap;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card-body a {
+  text-decoration: none;
+  color: black;
+}
+.rating {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.rating span {
+  margin: 0.1rem;
+}
+.rating svg {
+  color: #f8e825;
+}
+.rating-cls {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding-right: 0.5rem;
+}
+.card-text {
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+.card-title {
+  height: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-gen {
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  background-color: grey;
+  cursor: pointer;
+  color: white;
+}
+.details {
+  min-height: calc(100vh - 6rem);
+  padding: 3rem;
+}
+
+.columnFirst img {
+  width: 30rem;
+}
+.mainRow {
+  display: flex;
+  flex-direction: row;
+}
+
+//https://youtu.be/KL_yIf5uiJo
