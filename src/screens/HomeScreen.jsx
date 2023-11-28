@@ -1,4 +1,4 @@
-import products from "../products";
+import { products, sliderProducts } from "../products";
 import Product from "../components/Product";
 const HomeScreen = () => {
   return (

@@ -107,4 +107,46 @@ const products = [
   },
 ];
 
-export default products;
+const sliderProducts = [
+  {
+    itemId: "9",
+    name: "ASUS Vivobook 15",
+    image: "/assets/images/asus.jpg",
+    description:
+      "Stamp your style on the world with ASUS Vivobook 15, the feature-packed laptop that makes it easy to get things done, anywhere. Everything about Vivobook 15 is bold and improved, from its powerful 12th Gen Intel Core processor to its crisp and clear display, 180° lay-flat hinge, modern colors and sleek geometric design. Make a fresh start today with Vivobook 15!",
+    brand: "Asus",
+    category: "Electronics",
+    price: "65990",
+    countInStock: "7",
+    rating: "4.7",
+    totalReviews: "20",
+  },
+  {
+    itemId: "10",
+    name: "Apple 2023 iMac",
+    image: "/assets/images/imac.jpg",
+    description:
+      "Get more done faster with a next-generation chip from Apple. From creating presentations to gaming, you’ll fly through work and play.You can do amazing things when you use your Apple devices together. Copy something on iPhone and paste it on iMac. Use your iMac to answer FaceTime calls or send texts with Messages. And that’s just the beginning.",
+    brand: "Apple",
+    category: "Electronics",
+    price: "174990",
+    countInStock: "2",
+    rating: "5",
+    totalReviews: "6",
+  },
+  {
+    itemId: "11",
+    name: "NVIDIA GeForce RTX™ 4070 Ti",
+    image: "/assets/images/graphics.jpg",
+    description:
+      "Powered by NVIDIA DLSS3, ultra-efficient Ada Lovelace arch, and full ray tracing. 4th Generation Tensor Cores: Up to 4x performance with DLSS 3 vs. brute-force rendering. OC mode: 2760 MHz (OC mode)/ 2730 MHz (Default mode)",
+    brand: "Asus",
+    category: "Electronics",
+    price: "104506",
+    countInStock: "8",
+    rating: "4.9",
+    totalReviews: "12",
+  },
+];
+
+export { products, sliderProducts };

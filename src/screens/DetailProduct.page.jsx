@@ -1,4 +1,4 @@
-import products from "./../products";
+import { products } from "./../products";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating.component";
