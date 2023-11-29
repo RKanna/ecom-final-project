@@ -1,7 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Link } from "react-router-dom";
 import "swiper/css";
-const Slider = ({ sliderProducts }) => {
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+// import "swiper/css/scrollbar";
+const Slider = ({ products }) => {
   return (
     <div className="slides-main">
       <Swiper
@@ -14,11 +18,18 @@ const Slider = ({ sliderProducts }) => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        {sliderProducts.map((sliderProduct) => (
-          <SwiperSlide key={sliderProduct.image}>
-            <img src={sliderProduct.image} alt={sliderProduct.name} />
-          </SwiperSlide>
-        ))}
+        {products.map(
+          (product) =>
+            product.sliderValue === true && (
+              <SwiperSlide key={product.image}>
+                <div className="slide-img-fix">
+                  <Link to={`/product/${product.itemId}`}>
+                    <img src={product.image} alt={product.name} />
+                  </Link>
+                </div>
+              </SwiperSlide>
+            )
+        )}
       </Swiper>
     </div>
   );

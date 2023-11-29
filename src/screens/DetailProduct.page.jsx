@@ -1,4 +1,4 @@
-import { products } from "./../products";
+import products from "./../products";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating.component";
@@ -27,9 +27,34 @@ const DetailProductPage = () => {
               text={`${product.totalReviews} reviews`}
             />
             <span>Price : ₹ {product.price}</span>
+            <p>Description: {product.description}</p>
           </article>
         </div>
-        <div className="columnThird"></div>
+        <div className="columnThird">
+          <div className="box-div">
+            <div>
+              <span>Price : </span>
+              <span>₹ {product.price}</span>
+            </div>
+            <hr />
+            <div>
+              <span>Availability :</span>
+              <span>
+                {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+              </span>
+            </div>
+            <hr />
+            <div>
+              <button
+                className="btn-add-cart"
+                type="button"
+                disabled={product.countInStock == 0}
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

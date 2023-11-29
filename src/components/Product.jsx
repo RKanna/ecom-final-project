@@ -8,11 +8,11 @@ const Product = ({ product }) => {
           <img src={product.image} alt="" className="img-size" />
         </Link>
         <div className="card-body">
-          <a href={`/product/${product.itemId}`}>
+          <Link to={`/product/${product.itemId}`}>
             <div className="card-title">
               <strong>{product.name}</strong>
             </div>
-          </a>
+          </Link>
           <br />
           <div>
             <Rating

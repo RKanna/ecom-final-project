@@ -11,6 +11,7 @@ const products = [
     countInStock: "5",
     rating: "4.5",
     totalReviews: "5",
+    sliderValue: false,
   },
   {
     itemId: "2",
@@ -24,6 +25,7 @@ const products = [
     countInStock: "7",
     rating: "4.7",
     totalReviews: "3",
+    sliderValue: false,
   },
   {
     itemId: "3",
@@ -37,6 +39,7 @@ const products = [
     countInStock: "3",
     rating: "4.8",
     totalReviews: "10",
+    sliderValue: false,
   },
 
   {
@@ -51,6 +54,7 @@ const products = [
     countInStock: "3",
     rating: "4.9",
     totalReviews: "3",
+    sliderValue: false,
   },
 
   {
@@ -65,6 +69,7 @@ const products = [
     countInStock: "0",
     rating: "3.5",
     totalReviews: "3",
+    sliderValue: false,
   },
   {
     itemId: "8",
@@ -78,6 +83,7 @@ const products = [
     countInStock: "2",
     rating: "3.9",
     totalReviews: "7",
+    sliderValue: false,
   },
   {
     itemId: "4",
@@ -91,6 +97,7 @@ const products = [
     countInStock: "3",
     rating: "4.3",
     totalReviews: "5",
+    sliderValue: false,
   },
   {
     itemId: "6",
@@ -104,10 +111,8 @@ const products = [
     countInStock: "7",
     rating: "4.7",
     totalReviews: "3",
+    sliderValue: false,
   },
-];
-
-const sliderProducts = [
   {
     itemId: "9",
     name: "ASUS Vivobook 15",
@@ -120,6 +125,7 @@ const sliderProducts = [
     countInStock: "7",
     rating: "4.7",
     totalReviews: "20",
+    sliderValue: true,
   },
   {
     itemId: "10",
@@ -133,6 +139,7 @@ const sliderProducts = [
     countInStock: "2",
     rating: "5",
     totalReviews: "6",
+    sliderValue: true,
   },
   {
     itemId: "11",
@@ -146,7 +153,22 @@ const sliderProducts = [
     countInStock: "8",
     rating: "4.9",
     totalReviews: "12",
+    sliderValue: true,
+  },
+  {
+    itemId: "12",
+    name: "Creality CR-M4 3D Printer",
+    image: "/assets/images/printer.jpg",
+    description:
+      "CR-M4 boasts a massive build volume of 450*450*470mm. It's a real workhorse to create big models with less or no post-processing or to batch-print more parts in one go. Quasi-industrial Grade Large Format Precise and Reliable Dual Y-axis Linear Rails Start a Print Farm with More Printers Always a Handy Way of Printing Raise the Bar of Printhead Specs Diverse Filaments to Realize Bold Ideas Genuine 25-point Auto-Leveling Flexible PC Surface and Fast-heating Bed Less Wobbling with Rigid Z-axis",
+    brand: "Creality",
+    category: "Electronics",
+    price: "100989",
+    countInStock: "3",
+    rating: "3.8",
+    totalReviews: "4",
+    sliderValue: true,
   },
 ];
 
-export { products, sliderProducts };
+export default products;
