@@ -14,15 +14,22 @@ import Login from "./screens/Login.page.jsx";
 import { UserProvider } from "./context/UserContext.jsx";
 import Category from "./screens/Category.page.jsx";
 import Registration from "./screens/Registration.page.jsx";
+import Cart from "./screens/Cart.page.jsx";
+import PrivateRoute from "./components/Private.route.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/product/:itemId" element={<DetailProductPage />} />
-      <Route path="/Login" element={<Login />} />
+
       <Route path="/Category" element={<Category />} />
-      <Route path="/Registration" element={<Registration />} />
+
+      <Route path="/Cart" element={<Cart />} />
+      <Route path="" element={<PrivateRoute />}>
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Registration" element={<Registration />} />
+      </Route>
     </Route>
   )
 );

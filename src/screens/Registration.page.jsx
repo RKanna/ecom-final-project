@@ -18,7 +18,6 @@ const Registration = () => {
       return;
     }
     try {
-      //   const response = await createAuthUserWithEmailAndPassword(
       const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
@@ -34,7 +33,7 @@ const Registration = () => {
         confirmPassword: "",
       });
     } catch (err) {
-      console.log("Something Happend", err.message);
+      console.log("Something Happened", err.message);
       console.log(err.code);
       if (err.code === "auth/email-already-in-use") {
         alert("Email Already Exists Please use alternate Email");
