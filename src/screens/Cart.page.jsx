@@ -24,20 +24,18 @@ const Cart = () => {
   // };
 
   const incrementQuantity = (productId) => {
-    // Find the cart item by productId
+    // finding id
     const cartItem = cart.find((item) => item.itemId === productId);
     if (cartItem) {
-      // Increment quantity
+      // for increment
       const updatedQuantity = cartItem.quantity + 1;
       updateCart(productId, updatedQuantity);
     }
   };
 
   const decrementQuantity = (productId) => {
-    // Find the cart item by productId
     const cartItem = cart.find((item) => item.itemId === productId);
     if (cartItem && cartItem.quantity > 1) {
-      // Decrement quantity, ensure it doesn't go below 1
       const updatedQuantity = cartItem.quantity - 1;
       updateCart(productId, updatedQuantity);
     } else {
