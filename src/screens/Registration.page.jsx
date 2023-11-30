@@ -5,8 +5,10 @@ import {
   createUserDocumentFromAuth,
 } from "../utils/index.js";
 import { useUser } from "../context/UserContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
+  const navigate = useNavigate();
   const { formFields, setFormFields, setUser, logoutUser, userEmail } =
     useUser();
   const { displayName, email, password, confirmPassword } = formFields;
@@ -25,13 +27,17 @@ const Registration = () => {
       const userDocRef = await createUserDocumentFromAuth(user, {
         displayName,
       });
+      if (userDocRef) {
+        alert("SignUp Success");
+        navigate("/login");
+      }
       //   setFormFields(formFields);
-      setFormFields({
-        displayName: "",
-        email: "",
-        password: "",
-        confirmPassword: "",
-      });
+      // setFormFields({
+      //   displayName: "",
+      //   email: "",
+      //   password: "",
+      //   confirmPassword: "",
+      // });
     } catch (err) {
       console.log("Something Happened", err.message);
       console.log(err.code);

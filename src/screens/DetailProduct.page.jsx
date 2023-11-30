@@ -2,9 +2,15 @@ import products from "./../products";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating.component";
+import { useUser } from "../context/UserContext";
 const DetailProductPage = () => {
+  const { cart, addToCart, removeFromCart, clearCart } = useUser();
   const { itemId: productId } = useParams();
   const product = products.find((p) => p.itemId === productId);
+
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
   return (
     <section className="details">
       <br />
@@ -49,6 +55,7 @@ const DetailProductPage = () => {
                 className="btn-add-cart"
                 type="button"
                 disabled={product.countInStock == 0}
+                onClick={handleAddToCart}
               >
                 Add to Cart
               </button>

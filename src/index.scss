@@ -291,6 +291,76 @@ h1 {
   display: flex;
   gap: 2rem;
 }
+
+//Cart CSS
+.cart-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: start;
+  padding: 3rem;
+  border-bottom: 1px solid #ccc;
+  min-width: 100%;
+  min-height: calc(100vh - 6rem);
+}
+.cart-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  min-height: calc(100vh - 6rem);
+  align-items: center;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+.product-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-weight: bold;
+}
+
+.product-price,
+.product-quantity,
+.product-total {
+  margin-top: 5px;
+}
+
+.cart-img img {
+  width: 10rem;
+}
+.trash {
+  cursor: pointer;
+}
+.row-cart {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  border-bottom: 1px solid grey;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  border-top: 2px solid #ccc;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+.product-quantity input {
+  width: 2rem;
+}
+.product-title {
+  width: 10rem;
+}
+
 @media screen and (max-width: 768px) {
   .mainRow {
     flex-direction: column;
@@ -302,6 +372,9 @@ h1 {
   }
   .columnFirst img {
     width: 25rem;
+  }
+  .slide-img-fix img {
+    width: 10rem;
   }
 }
 //https://youtu.be/KL_yIf5uiJo
