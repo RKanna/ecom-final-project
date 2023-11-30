@@ -52,15 +52,6 @@ export const UserProvider = ({ children }) => {
 
   //cart functionality
 
-  // const addToCart = (product) => {
-  //   setCart([...cart, { ...product, quantity: 1 }]);
-  //   // Save cart information to localStorage
-  //   localStorage.setItem(
-  //     "cart",
-  //     JSON.stringify([...cart, { ...product, quantity: 1 }])
-  //   );
-  // };
-
   const addToCart = (product) => {
     // Check if the item already exists in the cart
     const existingItemIndex = cart.findIndex(
@@ -83,40 +74,29 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  const updateCart = (productId, quantity) => {
+    const updatedCart = cart.map((item) =>
+      item.itemId === productId ? { ...item, quantity } : item
+    );
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
   const removeFromCart = (productId) => {
-    // Check if the item exists in the cart
     const existingItemIndex = cart.findIndex(
       (item) => item.itemId === productId
     );
 
     if (existingItemIndex !== -1) {
-      // If the item exists, remove it from the cart
       const updatedCart = [...cart];
       updatedCart.splice(existingItemIndex, 1);
       setCart(updatedCart);
-      // Update localStorage with the modified cart
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
-    // If the item doesn't exist, do nothing
   };
-
-  // const removeFromCart = (productId) => {
-  //   const updatedCart = cart.filter((item) => item.itemId !== productId);
-  //   setCart(updatedCart);
-  //   // Save cart information to localStorage
-  //   localStorage.setItem("cart", JSON.stringify(updatedCart));
-  // };
-
-  // const removeFromCart = (productId) => {
-  //   const updatedCart = cart.filter((item) => item.itemId !== productId.itemId);
-  //   setCart(updatedCart);
-  //   // Save cart information to localStorage
-  //   localStorage.setItem("cart", JSON.stringify(updatedCart));
-  // };
 
   const clearCart = () => {
     setCart([]);
-    // Clear cart information from localStorage
     localStorage.removeItem("cart");
   };
 
@@ -146,8 +126,7 @@ export const UserProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         clearCart,
-        // productId,
-        // product,
+        updateCart,
       }}
     >
       {children}
