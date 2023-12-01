@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+// import { getFirestore } from "firebase/firestore/lite";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDuMWRjTZfSVaFX8jY5vk7FdKza4cMM5ic",
@@ -75,6 +76,7 @@ export {
   createAuthUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInAuthUserWithEmailAndPassword,
+  appDB,
 };
 
 // const addData = async (collection, id, val) => {

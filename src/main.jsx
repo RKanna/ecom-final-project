@@ -16,6 +16,8 @@ import Category from "./screens/Category.page.jsx";
 import Registration from "./screens/Registration.page.jsx";
 import Cart from "./screens/Cart.page.jsx";
 import PrivateRoute from "./components/Private.route.jsx";
+import Shipping from "./screens/Shipping.page.jsx";
+import Protected from "./components/Protected.route.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +31,9 @@ const router = createBrowserRouter(
       <Route path="" element={<PrivateRoute />}>
         <Route path="/Login" element={<Login />} />
         <Route path="/Registration" element={<Registration />} />
+      </Route>
+      <Route path="" element={<Protected />}>
+        <Route path="/Shipping" element={<Shipping />} />
       </Route>
     </Route>
   )

@@ -103,7 +103,7 @@ const Cart = () => {
             <h2>{calculateTotalItems()} Items</h2>
             <h2>Total Value : ₹ {calculateSubtotal()}</h2>
             {userEmail ? (
-              <Link to="/Address" className="proceed">
+              <Link to="/Shipping" className="proceed">
                 Proceed
               </Link>
             ) : (

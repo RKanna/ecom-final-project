@@ -10,6 +10,8 @@ export const UserProvider = ({ children }) => {
 
   //for cart context
   const [cart, setCart] = useState([]);
+  const [shipping, setShipping] = useState([]);
+  const [paymentPortal, setPaymentPortal] = useState("Stripe");
 
   //defined product and productId
 
@@ -32,12 +34,14 @@ export const UserProvider = ({ children }) => {
     const storedUserEmail = localStorage.getItem("userEmail");
     const storedDisplayName = localStorage.getItem("displayName");
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    const storedAddress = JSON.parse(localStorage.getItem("shipping")) || [];
 
     if (storedUserEmail && storedDisplayName) {
       setUserEmail(storedUserEmail);
       setDisplayName(storedDisplayName);
     }
     setCart(storedCart);
+    setShipping(storedAddress);
   }, []);
 
   //end of use Effect local storage function
@@ -111,6 +115,7 @@ export const UserProvider = ({ children }) => {
     localStorage.removeItem("userEmail");
     localStorage.removeItem("displayName");
     localStorage.removeItem("cart");
+    localStorage.removeItem("shipping");
   };
 
   return (
@@ -127,6 +132,8 @@ export const UserProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         updateCart,
+        shipping,
+        setShipping,
       }}
     >
       {children}

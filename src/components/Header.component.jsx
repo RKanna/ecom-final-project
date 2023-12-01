@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useUser } from "./../context/UserContext";
 import { FaSignOutAlt } from "react-icons/fa";
 const Header = () => {
-  const { userEmail, logoutUser } = useUser();
+  const { userEmail, logoutUser, cart } = useUser();
 
   const handleLogout = () => {
     logoutUser();
@@ -43,6 +43,11 @@ const Header = () => {
             <Link to="/Cart" className="fl-position">
               <FaShoppingCart className="point" />
               <h3>Cart</h3>
+              {cart.length > 0 ? (
+                <h3 className="header-cart">{cart.length}</h3>
+              ) : (
+                ""
+              )}
             </Link>
             {/* {userEmail ? (
               <Link to="/Cart" className="fl-position">
