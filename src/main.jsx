@@ -18,6 +18,7 @@ import Cart from "./screens/Cart.page.jsx";
 import PrivateRoute from "./components/Private.route.jsx";
 import Shipping from "./screens/Shipping.page.jsx";
 import Protected from "./components/Protected.route.jsx";
+import Payment from "./screens/Payment.page.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="" element={<Protected />}>
         <Route path="/Shipping" element={<Shipping />} />
+        <Route path="/payment" element={<Payment />} />
       </Route>
     </Route>
   )

@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating.component";
 import { useUser } from "../context/UserContext";
+import { GoDotFill } from "react-icons/go";
 const DetailProductPage = () => {
   const { cart, addToCart, removeFromCart, clearCart } = useUser();
   const { itemId: productId } = useParams();
@@ -13,15 +14,16 @@ const DetailProductPage = () => {
   };
   return (
     <section className="details">
+      {/* <br />
       <br />
+
       <br />
-      <Link to="/" className="header-heading btn-gen">
-        Go Back
-      </Link>
-      <br />
-      <br />
+      <br /> */}
       <div className="mainRow">
         <div className="columnFirst">
+          <Link to="/" className="header-heading btn-gen">
+            Go Back
+          </Link>
           <img src={product.image} alt={product.name} />
           {console.log(product.image)}
         </div>
@@ -38,15 +40,20 @@ const DetailProductPage = () => {
         </div>
         <div className="columnThird">
           <div className="box-div">
-            <div>
+            <div className="price-cart">
               <span>Price : </span>
               <span>₹ {product.price}</span>
             </div>
             <hr />
-            <div>
+            <div className="available">
               <span>Availability :</span>
-              <span>
-                {product.countInStock > 0 ? "In Stock" : "Out of Stock"}
+              <span className="top-nl">
+                {/* {product.countInStock > 0 ? "In Stock" : "Out of Stock"} */}
+                {product.countInStock > 0 ? (
+                  <GoDotFill className="green-cart" />
+                ) : (
+                  <GoDotFill className="red-cart" />
+                )}
               </span>
             </div>
             <hr />

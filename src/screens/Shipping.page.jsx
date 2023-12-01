@@ -1,20 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { collection, addDoc } from "firebase/firestore/lite";
 import { Link, useNavigate } from "react-router-dom";
 import { appDB } from "../utils/firestore.js";
+import { useUser } from "../context/UserContext.jsx";
 const Shipping = () => {
   const navigate = useNavigate();
-  const [profile, setProfile] = useState({
-    name: "",
-    address: "",
-    city: "",
-    pincode: "",
-    country: "",
-  });
+  const { profile, updateProfile } = useUser();
 
-  // Add a new shipping address to Firestore
   const handleChange = (e) => {
-    setProfile({
+    updateProfile({
       ...profile,
       [e.target.id]: e.target.value,
     });
@@ -29,6 +23,7 @@ const Shipping = () => {
         pincode: profile.pincode,
         country: profile.country,
       });
+      localStorage.setItem("profile", JSON.stringify(profile));
       alert("Data is successfully saved");
       console.log(res);
       if (res) {
@@ -40,6 +35,16 @@ const Shipping = () => {
       console.error("Firestore error:", err);
     }
   };
+
+  useEffect(() => {
+    // Check if profile information is stored in localStorage
+    const storedProfile = localStorage.getItem("profile");
+
+    if (storedProfile) {
+      // Parse and set the stored profile information
+      updateProfile(JSON.parse(storedProfile));
+    }
+  }, []);
   return (
     <section className="Shipping-page">
       <h1>Shipping Details</h1>

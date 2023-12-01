@@ -6,6 +6,15 @@ import HomeScreen from "./screens/HomeScreen";
 import { Outlet } from "react-router-dom";
 import Slider from "./slider/Slider";
 import products from "./products";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import Payment from "./screens/Payment.page";
+import {
+  PaymentElement,
+  LinkAuthenticationElement,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
 
 function App() {
   const [count, setCount] = useState(0);

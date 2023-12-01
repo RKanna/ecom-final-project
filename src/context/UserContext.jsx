@@ -35,6 +35,20 @@ export const UserProvider = ({ children }) => {
     confirmPassword: "",
   });
 
+  //For Shipping Context
+
+  const [profile, setProfile] = useState({
+    name: "",
+    address: "",
+    city: "",
+    pincode: "",
+    country: "",
+  });
+
+  const updateProfile = (newProfile) => {
+    setProfile(newProfile);
+  };
+
   //for local storage
 
   useEffect(() => {
@@ -57,7 +71,6 @@ export const UserProvider = ({ children }) => {
   const setUser = (email, name) => {
     setUserEmail(email);
     setDisplayName(name);
-    // Save user information to localStorage
     localStorage.setItem("userEmail", email);
     localStorage.setItem("displayName", name);
   };
@@ -65,23 +78,18 @@ export const UserProvider = ({ children }) => {
   //cart functionality
 
   const addToCart = (product) => {
-    // Check if the item already exists in the cart
     const existingItemIndex = cart.findIndex(
       (item) => item.itemId === product.itemId
     );
 
     if (existingItemIndex !== -1) {
-      // If the item exists, update the quantity
       const updatedCart = [...cart];
       updatedCart[existingItemIndex].quantity += 1;
       setCart(updatedCart);
-      // Update localStorage with the modified cart
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     } else {
-      // If the item doesn't exist, add it to the cart with quantity 1
       const updatedCart = [...cart, { ...product, quantity: 1 }];
       setCart(updatedCart);
-      // Update localStorage with the modified cart
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
   };
@@ -115,15 +123,14 @@ export const UserProvider = ({ children }) => {
   //end of cart function
 
   const logoutUser = () => {
-    // Clear user information from state
     setUserEmail(null);
     setDisplayName(null);
 
-    // Remove user information from localStorage
     localStorage.removeItem("userEmail");
     localStorage.removeItem("displayName");
     localStorage.removeItem("cart");
     localStorage.removeItem("shipping");
+    localStorage.removeItem("profile");
   };
 
   return (
@@ -144,6 +151,8 @@ export const UserProvider = ({ children }) => {
         setShipping,
         searchTerm,
         updateSearchTerm,
+        profile,
+        updateProfile,
       }}
     >
       {children}

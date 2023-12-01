@@ -13,13 +13,11 @@ const HomeScreen = () => {
 
   useEffect(() => {
     if (searchTerm) {
-      // Filter products based on the search term
       const filtered = products.filter((product) =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredProducts(filtered);
     } else {
-      // If no search term, display all products
       setFilteredProducts(products);
     }
   }, [searchTerm]);

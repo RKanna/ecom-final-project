@@ -38,7 +38,9 @@ const Header = () => {
           <button onClick={handleSearch}>Search</button>
         </div>
         <div className="cart-container">
-          <div>{displayName ? <h3>Hello {displayName}</h3> : ""}</div>
+          <div>
+            {displayName ? <h3>Hello {displayName.split(" ")[0]}</h3> : ""}
+          </div>
           <div>
             {/* <Link to="/Login" className="fl-position">
               <FaUser className="point" />
