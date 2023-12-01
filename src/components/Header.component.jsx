@@ -2,22 +2,43 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useUser } from "./../context/UserContext";
 import { FaSignOutAlt } from "react-icons/fa";
+import { useState } from "react";
 const Header = () => {
-  const { userEmail, logoutUser, cart } = useUser();
+  const {
+    userEmail,
+    logoutUser,
+    cart,
+    displayName,
+    searchTerm,
+    updateSearchTerm,
+  } = useUser();
 
   const handleLogout = () => {
     logoutUser();
   };
+
+  const handleSearch = () => {};
 
   return (
     <>
       <nav>
         <div className="brand-container">
           <Link to="/" className="header-heading">
-            <h1>SS Shop</h1>
+            <img src="/assets/logo/gadget.png" alt="logo" />
           </Link>
         </div>
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search product here"
+            value={searchTerm}
+            // onChange={}
+            onChange={(e) => updateSearchTerm(e.target.value)}
+          />
+          <button onClick={handleSearch}>Search</button>
+        </div>
         <div className="cart-container">
+          <div>{displayName ? <h3>Hello {displayName}</h3> : ""}</div>
           <div>
             {/* <Link to="/Login" className="fl-position">
               <FaUser className="point" />

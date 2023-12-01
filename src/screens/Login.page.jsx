@@ -35,11 +35,18 @@ const Login = () => {
         );
         console.log({ user });
         setFormFields({ email: "", password: "", confirmPassword: "" });
+        // if (user.displayName) {
+        //   console.log("User displayName:", user.displayName);
+        // } else {
+        //   console.log("User displayName is null or undefined");
+        // }
+
         if (user) {
           setUser(user.email, user.displayName);
           navigate("/Category");
           // navigate("/cart");
           console.log(user.email);
+          console.log(user.displayName);
         }
       } catch (err) {
         console.log("Error Occurd while Login", err.message);

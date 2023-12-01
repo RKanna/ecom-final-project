@@ -13,6 +13,14 @@ export const UserProvider = ({ children }) => {
   const [shipping, setShipping] = useState([]);
   const [paymentPortal, setPaymentPortal] = useState("Stripe");
 
+  //For Searching
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const updateSearchTerm = (term) => {
+    setSearchTerm(term);
+  };
+
   //defined product and productId
 
   // const { itemId: productId } = useParams();
@@ -134,6 +142,8 @@ export const UserProvider = ({ children }) => {
         updateCart,
         shipping,
         setShipping,
+        searchTerm,
+        updateSearchTerm,
       }}
     >
       {children}
