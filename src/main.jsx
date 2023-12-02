@@ -19,6 +19,7 @@ import PrivateRoute from "./components/Private.route.jsx";
 import Shipping from "./screens/Shipping.page.jsx";
 import Protected from "./components/Protected.route.jsx";
 import Payment from "./screens/Payment.page.jsx";
+import FilteredCategory from "./screens/FilteredCategory.page.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,7 +28,7 @@ const router = createBrowserRouter(
       <Route path="/product/:itemId" element={<DetailProductPage />} />
 
       <Route path="/Category" element={<Category />} />
-
+      <Route path="/category/:category" element={<FilteredCategory />} />
       <Route path="/Cart" element={<Cart />} />
       <Route path="" element={<PrivateRoute />}>
         <Route path="/Login" element={<Login />} />

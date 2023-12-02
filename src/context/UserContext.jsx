@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import products from "../products";
+import { showToast } from "../ReactToast";
+import products from "../products";
 
 const UserContext = createContext();
 
@@ -17,14 +17,13 @@ export const UserProvider = ({ children }) => {
 
   const [searchTerm, setSearchTerm] = useState("");
 
+  //for filtering product in home screen
+  const isHomeRoute = window.location.pathname === "/";
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
   const updateSearchTerm = (term) => {
     setSearchTerm(term);
   };
-
-  //defined product and productId
-
-  // const { itemId: productId } = useParams();
-  // const product = products.find((p) => p.itemId === productId);
 
   //Registration Context
 
@@ -52,7 +51,6 @@ export const UserProvider = ({ children }) => {
   //for local storage
 
   useEffect(() => {
-    // Check if user information is stored in localStorage
     const storedUserEmail = localStorage.getItem("userEmail");
     const storedDisplayName = localStorage.getItem("displayName");
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -73,6 +71,7 @@ export const UserProvider = ({ children }) => {
     setDisplayName(name);
     localStorage.setItem("userEmail", email);
     localStorage.setItem("displayName", name);
+    showToast(`User Login done`, "success");
   };
 
   //cart functionality
@@ -86,10 +85,12 @@ export const UserProvider = ({ children }) => {
       const updatedCart = [...cart];
       updatedCart[existingItemIndex].quantity += 1;
       setCart(updatedCart);
+      showToast(`${product.name} Quantity Increased`, "success");
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     } else {
       const updatedCart = [...cart, { ...product, quantity: 1 }];
       setCart(updatedCart);
+      showToast(`${product.name} added to cart!`, "success");
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
   };
@@ -110,7 +111,9 @@ export const UserProvider = ({ children }) => {
     if (existingItemIndex !== -1) {
       const updatedCart = [...cart];
       updatedCart.splice(existingItemIndex, 1);
+
       setCart(updatedCart);
+      showToast(`Product Removed`, "error");
       localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
   };
@@ -123,14 +126,17 @@ export const UserProvider = ({ children }) => {
   //end of cart function
 
   const logoutUser = () => {
-    setUserEmail(null);
-    setDisplayName(null);
+    // setUserEmail(null);
+    // setDisplayName(null);
+    setUserEmail("");
+    setDisplayName("");
 
     localStorage.removeItem("userEmail");
     localStorage.removeItem("displayName");
     localStorage.removeItem("cart");
     localStorage.removeItem("shipping");
     localStorage.removeItem("profile");
+    showToast(`User Logout done`, "error");
   };
 
   return (
@@ -153,6 +159,9 @@ export const UserProvider = ({ children }) => {
         updateSearchTerm,
         profile,
         updateProfile,
+        filteredProducts,
+        setFilteredProducts,
+        isHomeRoute,
       }}
     >
       {children}

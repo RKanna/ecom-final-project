@@ -15,6 +15,8 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +26,7 @@ function App() {
       <Header />
       <main className="py-3">
         <Outlet />
+        <ToastContainer />
       </main>
       <Footer />
     </>

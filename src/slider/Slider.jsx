@@ -11,20 +11,20 @@ const Slider = ({ products }) => {
       <div>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
-          spaceBetween={50}
-          slidesPerView={2}
+          spaceBetween={20}
+          slidesPerView={3}
           breakpoints={{
             0: {
-              slidesPerView: 1,
+              slidesPerView: 2,
             },
             400: {
               slidesPerView: 2,
             },
             639: {
-              slidesPerView: 3,
+              slidesPerView: 2,
             },
             865: {
-              slidesPerView: 4,
+              slidesPerView: 2,
             },
             1000: {
               slidesPerView: 2,
@@ -48,7 +48,11 @@ const Slider = ({ products }) => {
                 <SwiperSlide key={product.image}>
                   <div className="slide-img-fix">
                     <Link to={`/product/${product.itemId}`}>
-                      <img src={product.image} alt={product.name} />
+                      <img
+                        className="slider-main-img"
+                        src={product.image}
+                        alt={product.name}
+                      />
                     </Link>
                   </div>
                 </SwiperSlide>

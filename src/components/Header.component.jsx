@@ -39,6 +39,11 @@ const Header = () => {
         </div>
         <div className="cart-container">
           <div>
+            <Link className="cat-link" to="/Category">
+              Category
+            </Link>
+          </div>
+          <div>
             {displayName ? <h3>Hello {displayName.split(" ")[0]}</h3> : ""}
           </div>
           <div>

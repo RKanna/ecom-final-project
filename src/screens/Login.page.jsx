@@ -17,8 +17,8 @@ const Login = () => {
     const { user } = await signInWithGooglePopup();
     const userDocRef = await createUserDocumentFromAuth(user);
     setUser(user.email, user.displayName);
-    // navigate("/Category");
-    navigate("/cart");
+    navigate("/Category");
+    // navigate("/cart");
     // console.log(userDocRef.firestore._firestoreClient.user.uid);
   };
 

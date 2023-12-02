@@ -239,6 +239,34 @@ const products = [
     totalReviews: "9",
     sliderValue: false,
   },
+  {
+    itemId: "18",
+    name: "Inverter Split AC",
+    image: "/assets/images/ac.jpg",
+    description:
+      "Split AC with Flexicool inverter Technology : Variable speed compressor which adjusts power depending on heat load | with Flexicool Convertible 4-in-1 inverter technology where user can increase or decrease cooling capacity and saves upto 50%* energy consumption. Capacity: 1.5 Ton. Suitable for Mid sized rooms (111 sq ft to 150 sq. ft); 450 CFM Air Flow & Ambient Temprature: 52 degree Celsius with 2 way Air Directional Control; Best in Class Cooling Capacity with 4800 watts",
+    brand: "Carrier",
+    category: "Electronics",
+    price: "36990",
+    countInStock: "5",
+    rating: "4.5",
+    totalReviews: "4",
+    sliderValue: false,
+  },
+  {
+    itemId: "19",
+    name: "Vu 4K Smart LED TV",
+    image: "/assets/images/tv.jpg",
+    description:
+      "The Vu GloLED TV features an integrated DJ class subwoofer. It is a specially engineered Sub-woofer that fits into the slim frame of The Vu GloLED TV yet does not crackle or vibrate even if the volume is at 100%. This Subwoofer enhances bass frequencies as well as provides a surround sound effect. The Vu GloLED TV panel is paired with the Vu Glo AI processor which upscales OTT content using advanced AI and reproduces the full-colour gamut. The Vu Glo AI processor has the latest quad-core processor as well as a dual-core GPU to run apps without any lag. The Vu GloLED TVcomes with 2GB RAM and 16GB storage.",
+    brand: "Vu",
+    category: "Electronics",
+    price: "39990",
+    countInStock: "3",
+    rating: "4.9",
+    totalReviews: "4",
+    sliderValue: false,
+  },
 ];
 
 export default products;

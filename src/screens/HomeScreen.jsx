@@ -5,11 +5,8 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { useUser } from "../context/UserContext";
 const HomeScreen = () => {
-  const isHomeRoute = window.location.pathname === "/";
-
-  const { searchTerm } = useUser();
-
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  const { searchTerm, filteredProducts, setFilteredProducts, isHomeRoute } =
+    useUser();
 
   useEffect(() => {
     if (searchTerm) {

@@ -43,6 +43,8 @@ const Registration = () => {
       console.log(err.code);
       if (err.code === "auth/email-already-in-use") {
         alert("Email Already Exists Please use alternate Email");
+      } else if (err.code === "auth/weak-password") {
+        alert("Password must be at least 6 characters long");
       }
     }
   };

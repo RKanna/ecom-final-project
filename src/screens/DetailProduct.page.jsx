@@ -1,27 +1,42 @@
 import products from "./../products";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating.component";
 import { useUser } from "../context/UserContext";
 import { GoDotFill } from "react-icons/go";
+import { useEffect } from "react";
 const DetailProductPage = () => {
-  const { cart, addToCart, removeFromCart, clearCart } = useUser();
+  const {
+    cart,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    searchTerm,
+    filteredProducts,
+    setFilteredProducts,
+  } = useUser();
   const { itemId: productId } = useParams();
   const product = products.find((p) => p.itemId === productId);
 
   const handleAddToCart = () => {
     addToCart(product);
   };
+
+  //handleGoBack
+  const navigate = useNavigate();
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <section className="details">
-      {/* <br />
-      <br />
-
-      <br />
-      <br /> */}
       <div className="mainRow">
         <div className="columnFirst">
-          <Link to="/" className="header-heading btn-gen">
+          <Link
+            to="/"
+            className="header-heading btn-gen"
+            onClick={handleGoBack}
+          >
             Go Back
           </Link>
           <img src={product.image} alt={product.name} />
