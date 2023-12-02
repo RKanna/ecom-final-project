@@ -20,6 +20,7 @@ import Shipping from "./screens/Shipping.page.jsx";
 import Protected from "./components/Protected.route.jsx";
 import Payment from "./screens/Payment.page.jsx";
 import FilteredCategory from "./screens/FilteredCategory.page.jsx";
+import CustomPageNotFound from "./components/CustomPageNotFound.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +30,7 @@ const router = createBrowserRouter(
 
       <Route path="/Category" element={<Category />} />
       <Route path="/category/:category" element={<FilteredCategory />} />
+
       <Route path="/Cart" element={<Cart />} />
       <Route path="" element={<PrivateRoute />}>
         <Route path="/Login" element={<Login />} />
@@ -38,13 +40,13 @@ const router = createBrowserRouter(
         <Route path="/Shipping" element={<Shipping />} />
         <Route path="/payment" element={<Payment />} />
       </Route>
+      <Route path="*" element={<CustomPageNotFound />} />
     </Route>
   )
 );
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <App /> */}
     {/* User Provider wrapped for preventing error when useUser context used */}
     <UserProvider>
       <RouterProvider router={router} />

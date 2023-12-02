@@ -12,6 +12,7 @@ const products = [
     rating: "4.5",
     totalReviews: "5",
     sliderValue: false,
+    discount: "10%",
   },
   {
     itemId: "2",
@@ -26,6 +27,7 @@ const products = [
     rating: "4.7",
     totalReviews: "3",
     sliderValue: false,
+    discount: "20%",
   },
   {
     itemId: "3",
@@ -40,6 +42,7 @@ const products = [
     rating: "4.8",
     totalReviews: "10",
     sliderValue: false,
+    discount: "7%",
   },
 
   {
@@ -55,6 +58,7 @@ const products = [
     rating: "4.9",
     totalReviews: "3",
     sliderValue: false,
+    discount: "30%",
   },
 
   {
@@ -70,6 +74,7 @@ const products = [
     rating: "3.5",
     totalReviews: "3",
     sliderValue: false,
+    discount: "50%",
   },
   {
     itemId: "8",
@@ -84,6 +89,7 @@ const products = [
     rating: "3.9",
     totalReviews: "7",
     sliderValue: false,
+    discount: "9%",
   },
   {
     itemId: "4",
@@ -98,6 +104,7 @@ const products = [
     rating: "4.3",
     totalReviews: "5",
     sliderValue: false,
+    discount: "70%",
   },
   {
     itemId: "6",
@@ -112,6 +119,7 @@ const products = [
     rating: "4.7",
     totalReviews: "3",
     sliderValue: false,
+    discount: "45%",
   },
   {
     itemId: "9",
@@ -126,6 +134,7 @@ const products = [
     rating: "4.7",
     totalReviews: "20",
     sliderValue: true,
+    discount: "3%",
   },
   {
     itemId: "10",
@@ -140,6 +149,7 @@ const products = [
     rating: "5",
     totalReviews: "6",
     sliderValue: true,
+    discount: "2%",
   },
   {
     itemId: "11",
@@ -154,6 +164,7 @@ const products = [
     rating: "4.9",
     totalReviews: "12",
     sliderValue: true,
+    discount: "12%",
   },
   {
     itemId: "12",
@@ -168,6 +179,7 @@ const products = [
     rating: "3.8",
     totalReviews: "4",
     sliderValue: false,
+    discount: "6%",
   },
   {
     itemId: "13",
@@ -182,6 +194,7 @@ const products = [
     rating: "2.5",
     totalReviews: "30",
     sliderValue: false,
+    discount: "27%",
   },
   {
     itemId: "14",
@@ -196,6 +209,7 @@ const products = [
     rating: "5",
     totalReviews: "3",
     sliderValue: false,
+    discount: "13%",
   },
   {
     itemId: "15",
@@ -210,6 +224,7 @@ const products = [
     rating: "4",
     totalReviews: "3",
     sliderValue: false,
+    discount: "8%",
   },
   {
     itemId: "16",
@@ -224,6 +239,7 @@ const products = [
     rating: "4.7",
     totalReviews: "3",
     sliderValue: false,
+    discount: "5%",
   },
   {
     itemId: "17",
@@ -238,6 +254,7 @@ const products = [
     rating: "2.7",
     totalReviews: "9",
     sliderValue: false,
+    discount: "28%",
   },
   {
     itemId: "18",
@@ -252,6 +269,7 @@ const products = [
     rating: "4.5",
     totalReviews: "4",
     sliderValue: false,
+    discount: "16%",
   },
   {
     itemId: "19",
@@ -266,6 +284,7 @@ const products = [
     rating: "4.9",
     totalReviews: "4",
     sliderValue: false,
+    discount: "5%",
   },
 ];
 

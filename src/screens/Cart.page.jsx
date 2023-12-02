@@ -68,32 +68,34 @@ const Cart = () => {
                     <img src={cartItem.image} alt={cartItem.name} />
                   </div>
                 </div>
-                <div className="product-details">
-                  <div className="product-title">{cartItem.name}</div>
-                  <div className="product-price">₹{cartItem.price}</div>
-                </div>
-                <div className="product-quantity">
-                  <button onClick={() => decrementQuantity(cartItem.itemId)}>
-                    <IoIosArrowBack />
-                  </button>
-                  <input
-                    type="text"
-                    value={cartItem.quantity}
-                    min="1"
-                    readOnly
-                  />
-                  <button onClick={() => incrementQuantity(cartItem.itemId)}>
-                    <IoIosArrowForward />
-                  </button>
-                </div>
-                <div className="product-total">
-                  ₹{cartItem.price * cartItem.quantity}
-                </div>
-                <div>
-                  <FaTrash
-                    className="trash"
-                    onClick={() => removeHandler(cartItem.itemId)}
-                  />
+                <div className="cent-row">
+                  <div className="product-details">
+                    <div className="product-title">{cartItem.name}</div>
+                    <div className="product-price">₹{cartItem.price}</div>
+                  </div>
+                  <div className="product-quantity">
+                    <button onClick={() => decrementQuantity(cartItem.itemId)}>
+                      <IoIosArrowBack />
+                    </button>
+                    <input
+                      type="text"
+                      value={cartItem.quantity}
+                      min="1"
+                      readOnly
+                    />
+                    <button onClick={() => incrementQuantity(cartItem.itemId)}>
+                      <IoIosArrowForward />
+                    </button>
+                  </div>
+                  <div className="product-total">
+                    ₹{cartItem.price * cartItem.quantity}
+                  </div>
+                  <div>
+                    <FaTrash
+                      className="trash"
+                      onClick={() => removeHandler(cartItem.itemId)}
+                    />
+                  </div>
                 </div>
               </div>
             ))}

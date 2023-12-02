@@ -31,6 +31,10 @@ const DetailProductPage = () => {
   return (
     <section className="details">
       <div className="mainRow">
+        <div className="versatile-magnifier">
+          <h4>versatile magnifier</h4>
+          <h4>Discount:{product.discount} </h4>
+        </div>
         <div className="columnFirst">
           <Link
             to="/"
@@ -81,6 +85,25 @@ const DetailProductPage = () => {
               >
                 Add to Cart
               </button>
+              {/* { ? (
+                <button
+                  className="btn-add-cart"
+                  type="button"
+                  disabled={product.countInStock == 0}
+                  onClick={handleAddToCart}
+                >
+                  Add to Cart
+                </button>
+              ) : (
+                <button
+                  className="btn-add-cart"
+                  type="button"
+                  disabled
+                  onClick={handleAddToCart}
+                >
+                  In Cart
+                </button>
+              )} */}
             </div>
           </div>
         </div>

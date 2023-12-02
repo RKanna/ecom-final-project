@@ -49,6 +49,9 @@ const Category = () => {
           </div>
         ))}
       </div>
+      <Link to="/" className="btn-add-cart home-navigate-btn">
+        Home
+      </Link>
     </section>
   );
 };

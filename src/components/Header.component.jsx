@@ -1,7 +1,7 @@
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useUser } from "./../context/UserContext";
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaSignOutAlt, FaSearch } from "react-icons/fa";
 import { useState } from "react";
 const Header = () => {
   const {
@@ -35,7 +35,9 @@ const Header = () => {
             // onChange={}
             onChange={(e) => updateSearchTerm(e.target.value)}
           />
-          <button onClick={handleSearch}>Search</button>
+          <button className="search-btn" onClick={handleSearch}>
+            <FaSearch />
+          </button>
         </div>
         <div className="cart-container">
           <div>
