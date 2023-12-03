@@ -1,6 +1,6 @@
 import React from "react";
 import products from "../products.js";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, ScrollRestoration } from "react-router-dom";
 import { FaTrash } from "react-icons/fa";
 import { useUser } from "../context/UserContext.jsx";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -116,6 +116,7 @@ const Cart = () => {
           </div>
         </main>
       )}
+      <ScrollRestoration />
     </div>
   );
 };

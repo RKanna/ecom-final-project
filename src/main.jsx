@@ -7,6 +7,7 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
+  ScrollRestoration,
 } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen.jsx";
 import DetailProductPage from "./screens/DetailProduct.page.jsx";
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index={true} path="/" element={<HomeScreen />} />
+
       <Route path="/product/:itemId" element={<DetailProductPage />} />
 
       <Route path="/Category" element={<Category />} />

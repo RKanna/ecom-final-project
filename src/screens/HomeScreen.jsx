@@ -4,9 +4,15 @@ import Slider from "../slider/Slider";
 import { useState, useEffect } from "react";
 import React from "react";
 import { useUser } from "../context/UserContext";
+import { ScrollRestoration } from "react-router-dom";
 const HomeScreen = () => {
-  const { searchTerm, filteredProducts, setFilteredProducts, isHomeRoute } =
-    useUser();
+  const {
+    searchTerm,
+    filteredProducts,
+    setFilteredProducts,
+    isHomeRoute,
+    forceRerender,
+  } = useUser();
 
   useEffect(() => {
     if (searchTerm) {
@@ -22,7 +28,10 @@ const HomeScreen = () => {
   return (
     <>
       <div className="fix-homescreen">
-        {isHomeRoute && !searchTerm && <Slider products={products} />}
+        {/* Here, key={forceRerender} update every time when i click go back from detailproduct page so it will force reRendering it will fix  */}
+        {isHomeRoute && !searchTerm && (
+          <Slider key={forceRerender} products={products} />
+        )}
         {!searchTerm ? (
           <h1>Recently Added Products</h1>
         ) : (
@@ -38,6 +47,7 @@ const HomeScreen = () => {
             ) : null
           )}
         </section>
+        <ScrollRestoration />
       </div>
     </>
   );

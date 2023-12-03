@@ -3,8 +3,10 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import products from "../products";
 import Product from "../components/Product";
 import Rating from "../components/Rating.component";
+import { useUser } from "../context/UserContext";
 
 const FilteredCategory = () => {
+  const { addToCart } = useUser();
   const { category } = useParams();
   console.log("Category:", category);
   const [filteredCategory, setFilteredCategory] = useState([]);
@@ -26,21 +28,33 @@ const FilteredCategory = () => {
     <section className="filter-page">
       <h1>{category} Products</h1>
       <div className="filtered-category-page">
-        {filteredCategory.map((product) => (
-          <div key={product.itemId}>
-            <Link className="filtered-box" to={`/product/${product.itemId}`}>
+        {filteredCategory.map((filteredProduct) => (
+          <div key={filteredProduct.itemId}>
+            <Link
+              className="filtered-box"
+              to={`/product/${filteredProduct.itemId}`}
+            >
               <div
               // key={product.itemId}
               >
-                <img src={product.image} alt={product.name} />
+                <img src={filteredProduct.image} alt={filteredProduct.name} />
               </div>
-              <h3>{product.name}</h3>
+              <h3>{filteredProduct.name}</h3>
               <Rating
-                value={product.rating}
-                text={`${product.totalReviews} reviews`}
+                value={filteredProduct.rating}
+                text={`${filteredProduct.totalReviews} reviews`}
               />
-              <div className="card-text">₹ {product.price}</div>
+              <div className="card-text">₹ {filteredProduct.price}</div>
             </Link>
+            <div className="filter-btn-container">
+              <button
+                className="btn-add-cart"
+                disabled={filteredProduct.countInStock === 0}
+                onClick={() => addToCart(filteredProduct)}
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
         ))}
       </div>

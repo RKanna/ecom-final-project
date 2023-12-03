@@ -70,7 +70,7 @@ const products = [
     brand: "Amkette",
     category: "Car & Accessories",
     price: "698",
-    countInStock: "0",
+    countInStock: 0,
     rating: "3.5",
     totalReviews: "3",
     sliderValue: false,

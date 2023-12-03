@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { showToast } from "../ReactToast";
 import products from "../products";
+import { useParams } from "react-router-dom";
 
 const UserContext = createContext();
 
@@ -13,9 +14,15 @@ export const UserProvider = ({ children }) => {
   const [shipping, setShipping] = useState([]);
   const [paymentPortal, setPaymentPortal] = useState("Stripe");
 
+  //DetailProduct Page
+
   //For Searching
 
   const [searchTerm, setSearchTerm] = useState("");
+
+  //Fix Slider visibility in HomeScreen
+
+  const [forceRerender, setForceRerender] = useState("");
 
   //for filtering product in home screen
   const isHomeRoute = window.location.pathname === "/";
@@ -162,6 +169,8 @@ export const UserProvider = ({ children }) => {
         filteredProducts,
         setFilteredProducts,
         isHomeRoute,
+        forceRerender,
+        setForceRerender,
       }}
     >
       {children}

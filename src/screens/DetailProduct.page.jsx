@@ -1,5 +1,10 @@
 import products from "./../products";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import {
+  Navigate,
+  useNavigate,
+  useParams,
+  ScrollRestoration,
+} from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating.component";
 import { useUser } from "../context/UserContext";
@@ -14,6 +19,7 @@ const DetailProductPage = () => {
     searchTerm,
     filteredProducts,
     setFilteredProducts,
+    setForceRerender,
   } = useUser();
   const { itemId: productId } = useParams();
   const product = products.find((p) => p.itemId === productId);
@@ -26,6 +32,8 @@ const DetailProductPage = () => {
   const navigate = useNavigate();
   const handleGoBack = () => {
     navigate(-1);
+    //for force rerendering of homescreen because fixing the slider disappearance
+    setForceRerender((prev) => !prev);
   };
 
   return (
@@ -108,6 +116,7 @@ const DetailProductPage = () => {
           </div>
         </div>
       </div>
+      <ScrollRestoration />
     </section>
   );
 };

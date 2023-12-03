@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Rating from "./Rating.component";
+import { useUser } from "../context/UserContext";
 const Product = ({ product }) => {
+  const { addToCart } = useUser();
   return (
     <div className="card-body">
       <section className="card">
@@ -13,15 +15,22 @@ const Product = ({ product }) => {
               <strong>{product.name}</strong>
             </div>
           </Link>
-          <br />
+          {/* <br /> */}
           <div>
             <Rating
               value={product.rating}
               text={`${product.totalReviews} reviews`}
             />
           </div>
-          <br />
+          {/* <br /> */}
           <div className="card-text">₹ {product.price}</div>
+          <button
+            className="btn-add-cart new-btn"
+            disabled={product.countInStock === 0}
+            onClick={() => addToCart(product)}
+          >
+            Add to Cart
+          </button>
         </div>
       </section>
     </div>
