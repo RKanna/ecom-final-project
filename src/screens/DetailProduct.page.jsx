@@ -40,8 +40,10 @@ const DetailProductPage = () => {
     <section className="details">
       <div className="mainRow">
         <div className="versatile-magnifier">
-          <h4>versatile magnifier</h4>
-          <h4>Discount:{product.discount} </h4>
+          {/* <h4>Versatile Magnifier</h4> */}
+          <h4>VM</h4>
+          <h4>Discount</h4>
+          <h4 className="bold-txt">{product.discount}</h4>
         </div>
         <div className="columnFirst">
           <Link
@@ -61,6 +63,7 @@ const DetailProductPage = () => {
               value={product.rating}
               text={`${product.totalReviews} reviews`}
             />
+            <span>Brand : {product.brand}</span>
             <span>Price : ₹ {product.price}</span>
             <p>Description: {product.description}</p>
           </article>

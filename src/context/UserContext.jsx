@@ -22,7 +22,11 @@ export const UserProvider = ({ children }) => {
 
   //Fix Slider visibility in HomeScreen
 
-  const [forceRerender, setForceRerender] = useState("");
+  const [forceRerender, setForceRerender] = useState(false);
+
+  const triggerRerender = () => {
+    setForceRerender((prev) => !prev);
+  };
 
   //for filtering product in home screen
   const isHomeRoute = window.location.pathname === "/";
@@ -140,7 +144,6 @@ export const UserProvider = ({ children }) => {
 
     localStorage.removeItem("userEmail");
     localStorage.removeItem("displayName");
-    localStorage.removeItem("cart");
     localStorage.removeItem("shipping");
     localStorage.removeItem("profile");
     showToast(`User Logout done`, "error");
@@ -170,7 +173,7 @@ export const UserProvider = ({ children }) => {
         setFilteredProducts,
         isHomeRoute,
         forceRerender,
-        setForceRerender,
+        triggerRerender,
       }}
     >
       {children}
