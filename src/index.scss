@@ -93,20 +93,31 @@ h1 {
   gap: 2rem;
 }
 .card {
-  width: 15rem;
-  height: 15rem;
+  width: 18rem;
+  height: 18rem;
   // background-color: yellow;
-  margin-top: 10px;
+  // margin-top: 10px;
   padding: 2rem;
   margin: 2rem;
   white-space: nowrap;
   border: 1px solid grey;
-  // border: 1px solid rgb(149, 239, 239);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 0.5rem;
+  align-items: center;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.card img {
+  height: 6rem;
+}
+.new-btn {
+  width: 13rem;
 }
 .card-body a {
   text-decoration: none;
@@ -742,11 +753,12 @@ h1 {
   align-items: center;
   gap: 1rem;
   border: 1px solid rgb(202, 200, 200);
-  border-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
   padding: 2rem;
   width: 22rem;
   height: 22rem;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid rgb(202, 200, 200);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-top: 2px solid #ccc;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
@@ -818,6 +830,21 @@ h1 {
   top: 55%;
   left: 50%;
   font-size: 5rem;
+}
+.filter-btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 1px solid grey;
+  border-bottom: 1px solid rgb(202, 200, 200);
+  border-right: 1px solid rgb(202, 200, 200);
+  border-left: 1px solid rgb(202, 200, 200);
+  padding: 1rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+.filter-btn-container button {
+  width: 50%;
 }
 
 @media screen and (max-width: 768px) {
