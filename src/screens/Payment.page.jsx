@@ -64,7 +64,7 @@ const Payment = () => {
       <div className="split-row">
         <div className="add-border">
           {profile && (
-            <div>
+            <div className="address-payment">
               <h3>Your Address:</h3>
               <p>
                 <strong>Name:</strong> {profile.name}
@@ -84,7 +84,7 @@ const Payment = () => {
             </div>
           )}
         </div>
-        <div>
+        <div className="another">
           <h3>Items in Your Cart:</h3>
           <br />
           {cart.map((item, index) => (

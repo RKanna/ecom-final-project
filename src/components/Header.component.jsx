@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useUser } from "./../context/UserContext";
 import { FaSignOutAlt, FaSearch } from "react-icons/fa";
 import { useState } from "react";
+import Sidebar from "./Sidebar";
+import { VscThreeBars } from "react-icons/vsc";
 const Header = () => {
   const {
     userEmail,
@@ -18,6 +20,14 @@ const Header = () => {
   };
 
   const handleSearch = () => {};
+
+  //for Sidebar
+
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
 
   return (
     <>
@@ -40,15 +50,15 @@ const Header = () => {
           </button>
         </div>
         <div className="cart-container">
-          <div>
+          <div className="hide">
             <Link className="cat-link" to="/Category">
               Category
             </Link>
           </div>
-          <div>
+          <div className="hide">
             {displayName ? <h3>Hello {displayName.split(" ")[0]}</h3> : ""}
           </div>
-          <div>
+          <div className="hide">
             {/* <Link to="/Login" className="fl-position">
               <FaUser className="point" />
               <h3>Sign In</h3>
@@ -90,6 +100,10 @@ const Header = () => {
                 <h3>Cart</h3>
               </Link>
             )} */}
+          </div>
+          <div>
+            <VscThreeBars className="clr-three" onClick={toggleSidebar} />
+            {isSidebarVisible && <Sidebar />}
           </div>
         </div>
       </nav>

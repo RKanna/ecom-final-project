@@ -862,7 +862,19 @@ h1 {
 .filter-btn-container button {
   width: 50%;
 }
-
+.clr-three {
+  color: white;
+  cursor: pointer;
+}
+.sidebar h1 {
+  color: white;
+}
+.clr-three {
+  display: none;
+}
+.hide-main {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .mainRow {
     flex-direction: column;
@@ -877,6 +889,104 @@ h1 {
   }
   .slide-img-fix img {
     width: 10rem;
+  }
+  .search-bar {
+    display: none;
+  }
+  nav {
+    justify-content: space-around;
+    padding: 0;
+  }
+  .hide {
+    display: none;
+  }
+  .clr-three {
+    display: flex;
+  }
+  .sidebar {
+    width: 15rem;
+    height: 100vh;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    padding: 1rem;
+    transition: right 0.3s ease;
+  }
+  .sidebar.closed {
+    right: -15rem;
+  }
+  .hide-main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .row-cart {
+    width: 25rem;
+    flex-direction: column;
+  }
+  .cent-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .cart-row {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .for-cart-row {
+    flex-direction: column;
+  }
+  .for-cart-row {
+    padding: 2rem;
+  }
+  .box-cart-value {
+    position: relative;
+    top: 0%;
+    left: 0%;
+  }
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+  }
+  .product-price {
+    text-align: center;
+  }
+  .product-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .cart-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .summary {
+  }
+  .split-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 5rem;
+  }
+  .add-border {
+    width: 15rem;
+  }
+  .another {
+    display: flex;
+    flex-direction: column;
   }
 }
 //https://youtu.be/KL_yIf5uiJo
