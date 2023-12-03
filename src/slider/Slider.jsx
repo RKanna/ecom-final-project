@@ -14,26 +14,20 @@ const Slider = ({ products }) => {
           spaceBetween={20}
           slidesPerView={3}
           breakpoints={{
-            0: {
+            // when window width is >= 320px
+            320: {
               slidesPerView: 2,
+              spaceBetween: 100,
             },
-            400: {
-              slidesPerView: 2,
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 1,
+              spaceBetween: 100,
             },
-            639: {
+            // when window width is >= 640px
+            640: {
               slidesPerView: 2,
-            },
-            865: {
-              slidesPerView: 2,
-            },
-            1000: {
-              slidesPerView: 2,
-            },
-            1500: {
-              slidesPerView: 2,
-            },
-            1700: {
-              slidesPerView: 2,
+              spaceBetween: 100,
             },
           }}
           navigation
